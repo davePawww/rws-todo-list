@@ -7,6 +7,8 @@ export const useTodoStore = create<TodoStore>()(
   persist(
     (set) => ({
       todos: [],
+      filter: 'all',
+      setFilter: (filter) => set({ filter }),
       addTodo: (title: string) => {
         if (!title.trim()) return;
 
@@ -42,7 +44,7 @@ export const useTodoStore = create<TodoStore>()(
     {
       name: 'todo-store',
       storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({ todos: state.todos }),
+      partialize: (state) => ({ todos: state.todos, filter: state.filter }),
     },
   ),
 );
