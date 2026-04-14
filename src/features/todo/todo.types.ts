@@ -9,3 +9,7 @@ export type TodoStore = {
   addTodo: (title: string) => void;
   toggle: (id: string) => void;
 };
+
+export type TodoItemsProps = {
+  todo: Todo;
+};

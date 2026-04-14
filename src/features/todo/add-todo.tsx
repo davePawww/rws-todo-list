@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useTodoStore } from '@/features/todo/todo.store';
 
 export function AddTodo() {
   const [newTodo, setNewTodo] = useState('');
-
-  // TODO: Clear input after adding, Save new Todo
+  const addTodo = useTodoStore((state) => state.addTodo);
 
   return (
     <div className="flex items-center gap-2">
@@ -19,7 +19,7 @@ export function AddTodo() {
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
       />
-      <Button size="icon" onClick={() => console.log(newTodo)}>
+      <Button size="icon" onClick={() => addTodo(newTodo)}>
         <PlusIcon />
       </Button>
     </div>

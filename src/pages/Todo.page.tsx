@@ -1,5 +1,10 @@
-import { AddTodo } from '@/features/todo';
+import { AddTodo, TodoList } from '@/features/todo';
 
 export default function TodoPage() {
-  return <AddTodo />;
+  return (
+    <>
+      <AddTodo />
+      <TodoList />
+    </>
+  );
 }
