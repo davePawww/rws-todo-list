@@ -8,6 +8,7 @@ export type TodoStore = {
   todos: Todo[];
   addTodo: (title: string) => void;
   toggleTodo: (id: string) => void;
+  deleteTodo: (id: string) => void;
 };
 
 export type TodoItemsProps = {

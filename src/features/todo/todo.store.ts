@@ -34,6 +34,10 @@ export const useTodoStore = create<TodoStore>()(
             return todo;
           }),
         })),
+      deleteTodo: (id: string) =>
+        set((state) => ({
+          todos: state.todos.filter((todo) => todo.id !== id),
+        })),
     }),
     {
       name: 'todo-store',
