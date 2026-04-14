@@ -21,7 +21,7 @@ export const useTodoStore = create<TodoStore>()(
           ],
         }));
       },
-      toggle: (id: string) =>
+      toggleTodo: (id: string) =>
         set((state) => ({
           todos: state.todos.map((todo) => {
             if (todo.id === id) {

@@ -7,7 +7,7 @@ export type Todo = {
 export type TodoStore = {
   todos: Todo[];
   addTodo: (title: string) => void;
-  toggle: (id: string) => void;
+  toggleTodo: (id: string) => void;
 };
 
 export type TodoItemsProps = {
