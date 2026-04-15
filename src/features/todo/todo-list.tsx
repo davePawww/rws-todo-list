@@ -14,7 +14,7 @@ export function TodoList() {
   return (
     <div>
       {filteredTodos.length === 0 && <p className="text-xs">No todos yet</p>}
-      <ul>
+      <ul className="space-y-2">
         {filteredTodos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}
