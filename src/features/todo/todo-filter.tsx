@@ -11,15 +11,15 @@ export function TodoFilter() {
 
   return (
     <>
-      <ToggleGroup variant="outline" type="single" defaultValue="all" size="sm">
+      <ToggleGroup variant="outline" type="single" defaultValue="all" aria-label="Todo filters">
         {filters.map((f) => (
-          <ToggleGroupItem key={f} value={f} onClick={() => setFilter(f)} className="text-xs">
+          <ToggleGroupItem key={f} value={f} onClick={() => setFilter(f)}>
             {capitalizeFirstLetter(f)}
           </ToggleGroupItem>
         ))}
       </ToggleGroup>
 
-      <p className="text-xs opacity-50">Remaining todos: {remainingCount}</p>
+      <p className="text-sm opacity-50">Remaining todos: {remainingCount}</p>
     </>
   );
 }

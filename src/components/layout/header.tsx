@@ -1,4 +1,4 @@
-import { SunIcon, MoonIcon } from 'lucide-react';
+import { MoonIcon, SunIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import { FaGithub } from 'react-icons/fa';
 
@@ -16,19 +16,13 @@ export default function Header({ title, projectLink }: HeaderProps) {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: 'easeIn' }}
-      className="flex items-center justify-between"
+      className="space-y-2"
     >
-      <h1 className="font-semibold">{title}</h1>
-      <div className="flex items-center gap-1">
-        {theme === 'light' ? (
-          <Button variant={'secondary'} onClick={toggleTheme} aria-label="Toggle theme">
-            <SunIcon />
-          </Button>
-        ) : (
-          <Button variant={'secondary'} onClick={toggleTheme} aria-label="Toggle theme">
-            <MoonIcon />
-          </Button>
-        )}
+      <h4 className="text-center text-lg font-medium tracking-tight">{title}</h4>
+      <div className="flex items-center justify-center gap-1">
+        <Button variant={'secondary'} onClick={toggleTheme} aria-label="Toggle theme">
+          {theme === 'light' ? <SunIcon /> : <MoonIcon />}
+        </Button>
         <Separator orientation="vertical" />
         <Button variant={'outline'} asChild>
           <a href={projectLink} target="_blank" rel="noopener noreferrer">

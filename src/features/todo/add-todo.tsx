@@ -66,14 +66,12 @@ export function AddTodo() {
         }}
       >
         <DialogTrigger asChild>
-          <Button size="sm" className="w-full text-xs">
-            Create a new Todo
-          </Button>
+          <Button className="w-full">Create a new Todo</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-sm">
+        <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-sm">Creating a new Todo Item</DialogTitle>
-            <DialogDescription className="text-xs">
+            <DialogTitle>Creating a new Todo Item</DialogTitle>
+            <DialogDescription className="text-sm opacity-65">
               Fill up the form details below for your todo item. Click save once done.
             </DialogDescription>
           </DialogHeader>
@@ -83,18 +81,16 @@ export function AddTodo() {
               control={todoForm.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor={field.name} className="text-xs">
-                    Title
-                  </FieldLabel>
+                  <FieldLabel htmlFor={field.name}>Title</FieldLabel>
                   <Input
-                    className="text-xs"
+                    className="text-sm"
                     {...field}
                     id={field.name}
                     aria-invalid={fieldState.invalid}
                     autoComplete="off"
                   />
                   {fieldState.invalid && (
-                    <FieldError className="text-xs" errors={[fieldState.error]} />
+                    <FieldError className="text-sm" errors={[fieldState.error]} />
                   )}
                 </Field>
               )}
@@ -105,18 +101,16 @@ export function AddTodo() {
               control={todoForm.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor={field.name} className="text-xs">
-                    Description
-                  </FieldLabel>
+                  <FieldLabel htmlFor={field.name}>Description</FieldLabel>
                   <Input
-                    className="text-xs"
+                    className="text-sm"
                     {...field}
                     id={field.name}
                     aria-invalid={fieldState.invalid}
                     autoComplete="off"
                   />
                   {fieldState.invalid && (
-                    <FieldError className="text-xs" errors={[fieldState.error]} />
+                    <FieldError className="text-sm" errors={[fieldState.error]} />
                   )}
                 </Field>
               )}
@@ -127,23 +121,21 @@ export function AddTodo() {
               control={todoForm.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor={field.name} className="text-xs">
-                    Priority
-                  </FieldLabel>
+                  <FieldLabel htmlFor={field.name}>Priority</FieldLabel>
                   <Select value={field.value} onValueChange={field.onChange} name={field.name}>
-                    <SelectTrigger className="w-full text-xs">
+                    <SelectTrigger className="w-full text-sm">
                       <SelectValue placeholder="Select a priority" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
                         <SelectLabel>Priority</SelectLabel>
-                        <SelectItem value="low" className="text-xs">
+                        <SelectItem value="low" className="text-sm">
                           Low
                         </SelectItem>
-                        <SelectItem value="medium" className="text-xs">
+                        <SelectItem value="medium" className="text-sm">
                           Medium
                         </SelectItem>
-                        <SelectItem value="high" className="text-xs">
+                        <SelectItem value="high" className="text-sm">
                           High
                         </SelectItem>
                       </SelectGroup>
@@ -158,14 +150,12 @@ export function AddTodo() {
               control={todoForm.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor={field.name} className="text-xs">
-                    Due Date
-                  </FieldLabel>
+                  <FieldLabel htmlFor={field.name}>Due Date</FieldLabel>
                   <Popover open={openCalendar} onOpenChange={setOpenCalendar}>
                     <PopoverTrigger asChild>
                       <Button
                         variant="outline"
-                        className="data-[empty=true]:text-muted-foreground w-53 justify-start text-xs font-normal"
+                        className="data-[empty=true]:text-muted-foreground w-53 justify-start text-sm font-normal"
                       >
                         <CalendarIcon />
                         {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
@@ -185,7 +175,7 @@ export function AddTodo() {
                     </PopoverContent>
                   </Popover>
                   {fieldState.invalid && (
-                    <FieldError className="text-xs" errors={[fieldState.error]} />
+                    <FieldError className="text-sm" errors={[fieldState.error]} />
                   )}
                 </Field>
               )}
@@ -193,11 +183,11 @@ export function AddTodo() {
           </FieldGroup>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline" size={'sm'} onClick={() => todoForm.reset()}>
+              <Button variant="outline" onClick={() => todoForm.reset()}>
                 Cancel
               </Button>
             </DialogClose>
-            <Button type="submit" size={'sm'} form="todo-form">
+            <Button type="submit" form="todo-form">
               Save changes
             </Button>
           </DialogFooter>

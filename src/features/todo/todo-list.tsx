@@ -13,7 +13,15 @@ export function TodoList() {
 
   return (
     <div>
-      {filteredTodos.length === 0 && <p className="text-xs">No todos yet</p>}
+      {filteredTodos.length === 0 && (
+        <p className="flex items-center justify-center text-sm opacity-30">
+          {filter === 'active'
+            ? 'No active todos. Time to relax! 🎉'
+            : filter === 'completed'
+              ? 'No completed todos yet. Keep going! 💪'
+              : 'Your todo list is empty. Add some tasks to get started! 📝'}
+        </p>
+      )}
       <ul className="space-y-2">
         {filteredTodos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
