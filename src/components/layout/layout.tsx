@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: 'backIn' }}
-        className="full-shadow my-4 min-h-0 flex-1 overflow-y-auto rounded-lg p-4"
+        className="full-shadow my-4 min-h-0 flex-1 space-y-2 overflow-y-auto rounded-lg p-4"
       >
         {children}
       </motion.main>
