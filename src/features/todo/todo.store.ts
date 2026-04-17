@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-import type { Priority, TodoStore } from './todo.types';
+import type { TodoFormData, TodoStore } from '@/features/todo/todo.types';
 
 export const useTodoStore = create<TodoStore>()(
   persist(
@@ -9,12 +9,7 @@ export const useTodoStore = create<TodoStore>()(
       todos: [],
       filter: 'all',
       setFilter: (filter) => set({ filter }),
-      addTodo: (
-        title: string,
-        priority: Priority = 'low',
-        dueDate: Date = new Date(),
-        description?: string,
-      ) => {
+      addTodo: ({ title, description, priority, dueDate }: TodoFormData) => {
         if (!title.trim()) return;
 
         set((state) => ({
