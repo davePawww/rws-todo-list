@@ -19,7 +19,7 @@ export default function Footer() {
       transition={{ duration: 0.9, ease: 'easeIn' }}
       className="flex items-center justify-between"
     >
-      <p className="text-xs opacity-30">© 2026 | Dave Paurillo</p>
+      <p className="text-xs opacity-60">© 2026 | Dave Paurillo</p>
       <div className="flex gap-1">
         {socials.map((s) => (
           <SocialsIcon key={s.link} link={s.link} icon={s.icon} />
@@ -39,6 +39,7 @@ function SocialsIcon({ link, icon }: AvatarIconProps) {
   return (
     <a
       href={link}
+      aria-label={`Link to ${link}`}
       target="_blank"
       rel="noopener noreferrer"
       className="full-shadow flex size-8 items-center justify-center rounded-full"

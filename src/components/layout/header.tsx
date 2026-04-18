@@ -24,7 +24,7 @@ export default function Header({ title, projectLink }: HeaderProps) {
           {theme === 'light' ? <SunIcon /> : <MoonIcon />}
         </Button>
         <Separator orientation="vertical" />
-        <Button variant={'outline'} asChild>
+        <Button variant={'secondary'} asChild>
           <a href={projectLink} target="_blank" rel="noopener noreferrer">
             <FaGithub /> Code
           </a>
