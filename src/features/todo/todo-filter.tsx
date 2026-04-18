@@ -10,7 +10,7 @@ export function TodoFilter() {
   const remainingCount = todos.filter((t) => !t.completed).length;
 
   return (
-    <>
+    <div className="space-y-2 md:flex md:items-center md:justify-between md:space-y-0">
       <ToggleGroup variant="outline" type="single" defaultValue="all" aria-label="Todo filters">
         {filters.map((f) => (
           <ToggleGroupItem key={f} value={f} onClick={() => setFilter(f)}>
@@ -20,6 +20,6 @@ export function TodoFilter() {
       </ToggleGroup>
 
       <p className="text-sm opacity-50">Remaining todos: {remainingCount}</p>
-    </>
+    </div>
   );
 }

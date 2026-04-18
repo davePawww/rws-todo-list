@@ -16,7 +16,7 @@ export default function Header({ title, projectLink }: HeaderProps) {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: 'easeIn' }}
-      className="space-y-2"
+      className="space-y-2 md:flex md:items-center md:justify-between md:space-y-0"
     >
       <h4 className="text-center text-lg font-medium tracking-tight">{title}</h4>
       <div className="flex items-center justify-center gap-1">

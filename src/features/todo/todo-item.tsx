@@ -8,7 +8,7 @@ import { Field, FieldContent, FieldLabel, FieldDescription } from '@/components/
 import { useTodoStore } from '@/features/todo/todo.store';
 import type { TodoItemsProps } from '@/features/todo/todo.types';
 import { UpdateTodo } from '@/features/todo/update-todo';
-import { capitalizeFirstLetter, getDueDateLabel } from '@/utils/global-utils';
+import { getDueDateLabel, capitalizeFirstLetter } from '@/utils/global-utils';
 
 export default function TodoItem({ todo }: TodoItemsProps) {
   const [onHover, setOnHover] = useState(false);
@@ -17,7 +17,7 @@ export default function TodoItem({ todo }: TodoItemsProps) {
 
   return (
     <li
-      className="flex min-h-26 flex-col gap-1 rounded-md border p-2 shadow shadow-teal-500/30"
+      className="min-h-26 rounded-md border p-2 shadow shadow-teal-500/30"
       onMouseEnter={() => setOnHover(true)}
       onMouseLeave={() => setOnHover(false)}
     >
@@ -28,7 +28,7 @@ export default function TodoItem({ todo }: TodoItemsProps) {
           checked={todo.completed}
           onCheckedChange={() => toggleTodo(todo.id)}
         />
-        <FieldContent>
+        <FieldContent className="flex min-h-22 flex-col">
           <FieldLabel
             htmlFor={`todo-checkbox-${todo.id}`}
             className={todo.completed ? 'text-muted-foreground line-through' : ''}
@@ -40,36 +40,40 @@ export default function TodoItem({ todo }: TodoItemsProps) {
           >
             {todo.description}
           </FieldDescription>
+
+          <div className="mt-auto flex items-center justify-between">
+            <div className="flex items-center space-x-0.5">
+              <Badge
+                variant={getDueDateLabel(todo.dueDate) === 'Expired' ? 'destructive' : 'secondary'}
+                className="text-xs font-light"
+              >
+                {getDueDateLabel(todo.dueDate)}
+              </Badge>
+              <Badge
+                variant={todo.priority === 'high' ? 'destructive' : 'outline'}
+                className="text-xs font-light"
+              >
+                {capitalizeFirstLetter(todo.priority)}
+              </Badge>
+            </div>
+
+            <div className="flex h-6 items-center space-x-0.5">
+              {onHover && (
+                <>
+                  <UpdateTodo todo={todo} />
+                  <Button
+                    size="icon-sm"
+                    variant={'destructive'}
+                    onClick={() => deleteTodo(todo.id)}
+                  >
+                    <Trash />
+                  </Button>
+                </>
+              )}
+            </div>
+          </div>
         </FieldContent>
       </Field>
-
-      <div className="mt-auto flex items-center justify-between">
-        <div className="flex items-center space-x-0.5">
-          <Badge
-            variant={getDueDateLabel(todo.dueDate) === 'Expired' ? 'destructive' : 'secondary'}
-            className="text-xs font-light"
-          >
-            {getDueDateLabel(todo.dueDate)}
-          </Badge>
-          <Badge
-            variant={todo.priority === 'high' ? 'destructive' : 'outline'}
-            className="text-xs font-light"
-          >
-            {capitalizeFirstLetter(todo.priority)}
-          </Badge>
-        </div>
-
-        <div className="flex h-6 items-center space-x-0.5">
-          {onHover && (
-            <>
-              <UpdateTodo todo={todo} />
-              <Button size="icon-sm" variant={'destructive'} onClick={() => deleteTodo(todo.id)}>
-                <Trash />
-              </Button>
-            </>
-          )}
-        </div>
-      </div>
     </li>
   );
 }
