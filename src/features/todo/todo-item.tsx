@@ -1,4 +1,4 @@
-import { Pencil, Trash } from 'lucide-react';
+import { Trash } from 'lucide-react';
 import { useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
@@ -7,6 +7,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Field, FieldContent, FieldLabel, FieldDescription } from '@/components/ui/field';
 import { useTodoStore } from '@/features/todo/todo.store';
 import type { TodoItemsProps } from '@/features/todo/todo.types';
+import { UpdateTodo } from '@/features/todo/update-todo';
 import { capitalizeFirstLetter, getDueDateLabel } from '@/utils/global-utils';
 
 export default function TodoItem({ todo }: TodoItemsProps) {
@@ -61,9 +62,7 @@ export default function TodoItem({ todo }: TodoItemsProps) {
         <div className="flex h-6 items-center space-x-0.5">
           {onHover && (
             <>
-              <Button size="icon-sm" variant={'secondary'}>
-                <Pencil />
-              </Button>
+              <UpdateTodo todo={todo} />
               <Button size="icon-sm" variant={'destructive'} onClick={() => deleteTodo(todo.id)}>
                 <Trash />
               </Button>

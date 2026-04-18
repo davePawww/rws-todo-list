@@ -18,6 +18,7 @@ export type TodoStore = {
   filter: TodoFilter;
   setFilter: (filter: TodoFilter) => void;
   addTodo: (data: TodoFormData) => void;
+  updateTodo: (data: UpdateTodoData) => void;
   description?: string;
   toggleTodo: (id: string) => void;
   deleteTodo: (id: string) => void;
@@ -47,3 +48,7 @@ export const todoSchema = z.object({
 
 export type TodoFormValues = z.input<typeof todoSchema>;
 export type TodoFormData = z.output<typeof todoSchema>;
+
+export type UpdateTodoData = TodoFormData & {
+  id: string;
+};
