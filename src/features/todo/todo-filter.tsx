@@ -19,7 +19,7 @@ export function TodoFilter() {
         ))}
       </ToggleGroup>
 
-      <p className="text-sm opacity-50">Remaining todos: {remainingCount}</p>
+      <p className="text-sm opacity-60">Remaining todos: {remainingCount}</p>
     </div>
   );
 }
