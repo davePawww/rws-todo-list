@@ -1,4 +1,4 @@
-import TodoItem from '@/features/todo/todo-item';
+import TodoItem from '@/features/todo/components/todo-item';
 import { useTodoStore } from '@/features/todo/todo.store';
 
 export function TodoList() {

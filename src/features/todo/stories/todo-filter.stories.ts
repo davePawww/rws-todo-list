@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { TodoFilter } from '@/features/todo/todo-filter';
+import { TodoFilter } from '@/features/todo/components/todo-filter';
 
 const meta = {
   title: 'TodoFilter',

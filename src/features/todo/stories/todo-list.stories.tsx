@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { TodoList } from '@/features/todo/todo-list';
+import { TodoList } from '@/features/todo/components/todo-list';
 import { useTodoStore } from '@/features/todo/todo.store';
 
 const meta = {

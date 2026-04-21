@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { TodoFilter } from '@/features/todo/todo-filter';
+import { TodoFilter } from '@/features/todo/components/todo-filter';
 import { useTodoStore } from '@/features/todo/todo.store';
 
 describe('TodoFilter', () => {

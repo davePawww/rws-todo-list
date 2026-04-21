@@ -5,9 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Field, FieldContent, FieldLabel, FieldDescription } from '@/components/ui/field';
+import { UpdateTodo } from '@/features/todo/components/update-todo';
 import { useTodoStore } from '@/features/todo/todo.store';
 import type { TodoItemsProps } from '@/features/todo/todo.types';
-import { UpdateTodo } from '@/features/todo/update-todo';
 import { cn } from '@/lib/utils';
 import { getDueDateLabel, capitalizeFirstLetter } from '@/utils/global-utils';
 

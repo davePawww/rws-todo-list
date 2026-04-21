@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
-import { TodoList } from '@/features/todo/todo-list';
+import { TodoList } from '@/features/todo/components/todo-list';
 import { useTodoStore } from '@/features/todo/todo.store';
 
 describe('TodoList', () => {
