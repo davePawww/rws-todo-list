@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { AddTodo } from '@/features/todo/add-todo';
+import { AddTodo } from '@/features/todo/components/add-todo';
 import { useTodoStore } from '@/features/todo/todo.store';
 
 describe('AddTodo', () => {

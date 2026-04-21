@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { AddTodo } from '@/features/todo/add-todo';
+import { AddTodo } from '@/features/todo/components/add-todo';
 
 const meta = {
   title: 'AddTodo',
