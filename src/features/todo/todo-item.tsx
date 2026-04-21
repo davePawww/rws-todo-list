@@ -8,6 +8,7 @@ import { Field, FieldContent, FieldLabel, FieldDescription } from '@/components/
 import { useTodoStore } from '@/features/todo/todo.store';
 import type { TodoItemsProps } from '@/features/todo/todo.types';
 import { UpdateTodo } from '@/features/todo/update-todo';
+import { cn } from '@/lib/utils';
 import { getDueDateLabel, capitalizeFirstLetter } from '@/utils/global-utils';
 
 export default function TodoItem({ todo }: TodoItemsProps) {
@@ -45,7 +46,10 @@ export default function TodoItem({ todo }: TodoItemsProps) {
             <div className="flex items-center space-x-0.5">
               <Badge
                 variant={getDueDateLabel(todo.dueDate) === 'Expired' ? 'destructive' : 'secondary'}
-                className="text-xs font-light"
+                className={cn(
+                  'text-xs font-light',
+                  getDueDateLabel(todo.dueDate) === 'Expired' && 'hidden',
+                )}
               >
                 {getDueDateLabel(todo.dueDate)}
               </Badge>

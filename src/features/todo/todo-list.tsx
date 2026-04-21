@@ -14,7 +14,7 @@ export function TodoList() {
   return (
     <div>
       {filteredTodos.length === 0 && (
-        <p className="flex items-center justify-center text-sm opacity-30">
+        <p className="flex items-center justify-center text-sm opacity-60">
           {filter === 'active'
             ? 'No active todos. Time to relax! 🎉'
             : filter === 'completed'
