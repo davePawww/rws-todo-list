@@ -4,7 +4,7 @@ import { TodoList } from '@/features/todo/components/todo-list';
 import { useTodoStore } from '@/features/todo/todo.store';
 
 const meta = {
-  title: 'TodoList',
+  title: 'Todo/TodoList',
   component: TodoList,
   parameters: {},
   tags: ['autodocs'],

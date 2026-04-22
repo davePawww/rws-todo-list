@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TodoFilter } from '@/features/todo/components/todo-filter';
 
 const meta = {
-  title: 'TodoFilter',
+  title: 'Todo/TodoFilter',
   component: TodoFilter,
   parameters: {},
   tags: ['autodocs'],

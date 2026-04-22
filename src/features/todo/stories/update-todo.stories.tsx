@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { UpdateTodo } from '@/features/todo/components/update-todo';
 
 const meta = {
-  title: 'UpdateTodo',
+  title: 'Todo/UpdateTodo',
   component: UpdateTodo,
   parameters: {},
   tags: ['autodocs'],
