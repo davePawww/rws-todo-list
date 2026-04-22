@@ -81,7 +81,7 @@ export function UpdateTodo({ todo }: UpdateTodoProps) {
         }}
       >
         <DialogTrigger asChild>
-          <Button size="icon-sm" variant={'secondary'}>
+          <Button size="icon-sm" variant={'secondary'} aria-label="update todo">
             <Pencil />
           </Button>
         </DialogTrigger>
